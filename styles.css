@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: auto;
+}
+
+html {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background: url("world.png") round;
+}
+
+.quiz-area {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.cards {
+    display: grid;
+    margin-top: 2%;
+    grid-template-columns: repeat(3, 1fr);
+    width: 60%;
+}
+
+.card {
+    width: 150px;
+    height: 150px;
+    margin: 10px 10px;
+    border-radius: 10px;
+    color: coral;
+    font-weight: bold;
+    font-size: 1.3em;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+p{
+    text-align: center;
+}
+
+.question, .answer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    position: absolute;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.answer {
+    background: coral;
+    color: white;
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+
+.question {
+    background: antiquewhite;
+    z-index: 1;
+}
+
+.card:hover {
+    transform: rotateY(180deg);
+}
